@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title>
-    凤凰木下
-    
-</title>
+    <title> 在Markdown中使用缩进 · 凤凰木下 </title>
     <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -208,10 +205,6 @@
         <main class="main" id="main">
             
     
-
-<section class="posts">
-    
-        
     <article class="post">
         <header class="post-header">
             <div class="post-time syuanpi riseIn-light back-1">
@@ -224,112 +217,49 @@
             </div>
             <h1 class="post-title syuanpi riseIn-light back-2">
             
-                <a href="/2017/09/21/indent-in-markdown/">在Markdown中使用缩进</a>
+                在Markdown中使用缩进
             
             </h1>
+            
+                
             
         </header>
         <div class="post-content syuanpi riseIn-light back-3">
             
-                
-                    <p>&#8195;&#8195;说实话，Markdown用起来很方便，但是不处理行首的空格以及忽略连续空格确实很不习惯，虽然这锅应该甩给HTML。文章的话还是觉得每段空两格看的更舒服一些，事实上中文习惯也应该是这样吧。交一篇所有段首都没有空格的作文，怕不是要被语文老师训话（笑）。</p>
+                <p>&#8195;&#8195;说实话，Markdown用起来很方便，但是不处理行首的空格以及忽略连续空格确实很不习惯，虽然这锅应该甩给HTML。文章的话还是觉得每段空两格看的更舒服一些，事实上中文习惯也应该是这样吧。交一篇所有段首都没有空格的作文，怕不是要被语文老师训话（笑）。</p>
 <p>&#8195;&#8195;既然知道这是HTML的问题，那么其实可以从HTML中寻找解决办法。在这之前，先理解一个概念，HTML字符实体。</p>
 <blockquote><p>在 HTML 中，某些字符是预留的。<br>在 HTML 中不能使用小于号（&lt;）和大于号（&gt;），这是因为浏览器会误认为它们是标签。<br>如果希望正确地显示预留字符，我们必须在 HTML 源代码中使用字符实体（character entities）。字符实体类似这样：<br>&amp;entity_name;<br>或<br>&amp;#entity_number;</p>
 <footer><strong>Via</strong><cite><a href="http://www.runoob.com/html/html-entities.html" target="_blank" rel="external">HTML字符实体</a></cite></footer></blockquote>
-                    
-            
-        
-            <p class="content-link">
-                <a href="/2017/09/21/indent-in-markdown/#more">
-                    <span class="iconfont icon-right">继续阅读</span>
-                </a>
-            </p>
-        
-        </div>
-        
-    </article>
-    
+<a id="more"></a>
+<p>&#8195;&#8195;了解了字符实体的概念后，那么就可以尝试使用空格的字符实体。先来看看几个表示空格的字符实体。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">空格      &amp;nbsp;    &amp;#160;     最常用的空格，也就是按下空格键产生的空格。</div><div class="line">半角空格  &amp;ensp;    &amp;#8194;    占据的宽度正好是1/2个中文宽度</div><div class="line">全角空格  &amp;emsp;    &amp;#8195;    占据的宽度正好是1个中文宽度</div></pre></td></tr></table></figure></p>
+<p>&#8195;&#8195;当然，与之相关的空格或空白符不止以上三种。更多的请参考<a href="http://www.runoob.com/tags/ref-entities.html" target="_blank" rel="external">HTML实体参考手册</a>。</p>
+<p>&#8195;&#8195;其实说明很清楚了，使用全角空格两个，正好可以空出两个中文大小的位置。但还是来对比一下。</p>
+<p>&#160;&#160;这一行两个普通空格。<br>这一行没有空格。<br>&#8194;&#8194;这一行两个半角空格。<br>这一段没有空格。<br>&#8195;&#8195;这一行两个全角空格。</p>
+<p>&#8195;&#8195;普通空格占据的宽度是受字体的影响的，因此用来缩进可能并不合适。要进行与文字大小相关的缩进长度，可以使用多个半角空格或全角空格来实现。</p>
 
-    
-        
-    <article class="post">
-        <header class="post-header">
-            <div class="post-time syuanpi riseIn-light back-1">
-                <span>2017年9月19日</span>
-                
-                
-                    <span class="post-category"><a href="/categories/技/">技</a></span>
-                
-                
-            </div>
-            <h1 class="post-title syuanpi riseIn-light back-2">
-            
-                <a href="/2017/09/19/build-a-blog-by-hexo/">使用GitHub搭建博客</a>
-            
-            </h1>
-            
-        </header>
-        <div class="post-content syuanpi riseIn-light back-3">
-            
-                
-                    <p>&emsp;&emsp;既然正好用GitHub和Hexo搭建了一个博客，那就把搭建流程简单的介绍一下，详细的一搜一大把，我就不啰嗦了。然后再记录一些需要注意的地方。</p>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>&emsp;&emsp;<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo</a>是一个博客框架，使用Markdown解析文章，生成静态网页。GitHub有个<a href="https://pages.github.com/" target="_blank" rel="external">Pages</a>的功能，可以用网页展示个人或者项目，其一个限制就是只能使用静态网页。当然，在其他环境使用Hexo也是可以，只不过GitHub免费，不限流量，还可以绑定自己的域名，是一个比较好的选择。<br>
-                    
-            
-        
-            <p class="content-link">
-                <a href="/2017/09/19/build-a-blog-by-hexo/#more">
-                    <span class="iconfont icon-right">继续阅读</span>
-                </a>
-            </p>
-        
-        </div>
-        
-    </article>
-    
-
-    
-        
-    <article class="post">
-        <header class="post-header">
-            <div class="post-time syuanpi riseIn-light back-1">
-                <span>2017年9月18日</span>
-                
-                
-                    <span class="post-category"><a href="/categories/乱/">乱</a></span>
-                
-                
-            </div>
-            <h1 class="post-title syuanpi riseIn-light back-2">
-            
-                <a href="/2017/09/18/Again/">断-续</a>
-            
-            </h1>
-            
-        </header>
-        <div class="post-content syuanpi riseIn-light back-3">
-            
-                
-                    <p>&emsp;&emsp;回想上一次写博客，那已经是高中时候的事了，虽然那时候也只是写些日常琐事。现在想想那时候也挺厉害，什么都不会，去弄主机，买域名，搭WordPress。这么多年过去，年龄已经不好意思说出，感觉自己也并没有多会些什么，却少了那份愿意折腾的心。</p>
-<p>&emsp;&emsp;为什么又再开，我也说不清为什么，只是觉得应该做一些记录。或许是因为最近压力大了，累了，脑子不清醒了，以为自己想要记些东西。不管怎么样，既然开了，就尝试能不能写下去吧。</p>
-<p>&emsp;&emsp;会写些什么，我也不知道，不过可以预想到的是，肯定乱七八糟什么都有可能吧，并没有明确的一个主题。记录些看到的、想到的、学习到的东西吧，没有深浅，没有难易，只有想写与不想写。</p>
-<p>&emsp;&emsp;名字的话，还是用回凤凰木下吧，虽然已经时隔多年，但是高中那段时光，却是不会忘记，那些人、那些事，已经深深留在脑海里。</p>
-<p>&emsp;&emsp;现在正处于暴风雨中的十字路口，一路前行，希望能遇上更美好的事物。</p>
-
-                
             
         
         </div>
         
+            
+            
+        
     </article>
     
-
-    
-</section>
-    
-    <nav class="pagination">
-        <span class="page-number current">1</span>
+        
+    <nav class="article-page">
+        
+        
+            <a href="/2017/09/19/build-a-blog-by-hexo/" id="art-right" class="art-left">
+                <span class="prev-title"> 
+                    <i class="iconfont icon-left"></i>使用GitHub搭建博客
+                </span>
+            </a>
+        
     </nav>
+
+        
+    
 
 
         </main>
@@ -396,6 +326,8 @@ $(document).ready(function(){
 })
 </script>
     </div>
+    
+        
     
     <div class="backtop syuanpi dead toTop" id="backtop">
     <i class="iconfont icon-up"></i>
