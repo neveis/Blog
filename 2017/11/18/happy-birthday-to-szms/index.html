@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title> CSS中absolute的特性和应用 · 凤凰木下 </title>
+    <title> 开始的地方 · 凤凰木下 </title>
     <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -16,8 +16,6 @@
 
 
 
-
-    <meta name="keywords" content="CSS, Nlvi" />
 
 <link rel="stylesheet" href="/style/style.css">
 <script src="/script/jquery.min.js"></script>
@@ -210,43 +208,25 @@
     <article class="post">
         <header class="post-header">
             <div class="post-time syuanpi riseIn-light back-1">
-                <span>2017年9月30日</span>
+                <span>2017年11月18日</span>
                 
                 
-                    <span class="post-category"><a href="/categories/技/">技</a></span>
+                    <span class="post-category"><a href="/categories/杂/">杂</a></span>
                 
                 
             </div>
             <h1 class="post-title syuanpi riseIn-light back-2">
             
-                CSS中absolute的特性和应用
+                开始的地方
             
             </h1>
             
-                
-                    <div class="post-tags syuanpi riseIn-light back-3">
-                    
-                        <a href="/tags/CSS/">CSS</a>
-                    
-                    </div>
                 
             
         </header>
         <div class="post-content syuanpi riseIn-light back-3">
             
-                <p>&emsp;&emsp;以前有稍微的看过一下HTML和CSS，不过也只是了解的程度，想自己写些布局还是有些困难。因为有时候可能还是会用到一些，所以再稍微深入了解一下，至少是可以做些简单的布局吧。这里就做一些简单的记录。这次先写一下absolute。</p>
-<p>&emsp;&emsp;absolute和浮动有相同的两大特性：破坏性和包裹性。破坏性：子元素设置absolute，容器高度坍缩。包裹性：容器设置absolute，容器大小刚好包裹子元素，前提是容器没有设置宽高。下面展示一下，什么是包裹性和破坏性。因为结构比较简单，这里只贴一下CSS。<br><a id="more"></a><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*破坏性*/</span></div><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="comment">/*div*/</span></div><div class="line">    <span class="attribute">width</span>: <span class="number">400px</span>;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#999</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.child-item</span> &#123;</div><div class="line">    <span class="comment">/*div*/</span></div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">background-color</span>: black;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><img src="http://oiounq5oq.bkt.clouddn.com/blog/child-absolute.png" alt="破坏性"></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*包裹性，注意容易没有设置宽度*/</span></div><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="comment">/*div*/</span></div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#999</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.child-item</span> &#123;</div><div class="line">    <span class="comment">/*div*/</span></div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">background-color</span>: black;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="http://oiounq5oq.bkt.clouddn.com/blog/container-absolute.png" alt="包裹性"></p>
-<p>&emsp;&emsp;这两个特性是在使用absolute时时刻需要注意的地方。当然这并不一定是负面影响，主要还是要结合实际的应用场合。</p>
-<p>&emsp;&emsp;absolute还有一些巧妙的应用，第一个是位置跟随。位置跟随的意思是，当一个元素的position设置为absolute，并且没有设置left、right、top和bottom时，元素会保持在原来位置，并且处于浮动状态。这里一个重点是没有设置left、right、top和bottom，如果设置了，元素会根据最近的设置有positon:relative/absolute/fixed/sticky的元素设置位置。这种情况下，元素会保持在原来位置，并且不占据空间，这时候可以通过设置margin值来调整位置。这里看两个例子<sup>[<a href="http://www.imooc.com/video/4461" target="_blank" rel="external">1</a>] [<a href="http://www.imooc.com/video/4465" target="_blank" rel="external">2</a>]</sup>。</p>
-<p><img src="http://oiounq5oq.bkt.clouddn.com/blog/css-absolute-vip.png" alt="绝对定位覆盖"></p>
-<p><img src="http://oiounq5oq.bkt.clouddn.com/blog/css-absolute-iconalign.png" alt="图标对齐"></p>
-<p>&emsp;&emsp;对于第一个例子，使用absolute之后，因为vip图标本身不占据空间，并且位置不变（这里有个技巧，具体请看参考链接），所以跟在图片后面，这时候设置一下margin值，就可以轻松达到覆盖图片左上角的效果，即便图片大小有变化，依然可以保证vip图标的位置。</p>
-<p>&emsp;&emsp;对于第二个例子，这是一个图标对齐和文字的对齐，也可通过设置absolute来做到对齐效果。</p>
-<p>&emsp;&emsp;还有一个应用是设置left、right、top和bottom属性达到拉伸或填充的效果。例如设置left:0和right:0，结果就是左右拉伸，效果和width:100%是一样的。这个比较好理解，就不多说了。</p>
-<p>&emsp;&emsp;absolute的特性大致就这些，巧妙的应用能达到很好的效果。这里感谢张鑫旭老师<a href="http://www.imooc.com/learn/192" target="_blank" rel="external">CSS深入理解之absolute</a>的视频，更详细的说明可以看看老师的视频。不过张老师比较有个性，风格可能不是大家都能适应。</p>
+                <p>&emsp;&emsp;今天是高中母校70周年校庆，尽管并没有毕业多久，许多事情还历历在目，但真的是感慨良多。高中三年，时间不长，经历了许多也改变了许多，说是人生的一次转折，并不为过。<br>&emsp;&emsp;来到深中，似乎是一种偶然，但又是一种必然。初中时，并未想过自己能考入深中。依然记得在填报志愿时，在老师办公室，与老师讨论着填报什么学校。尽管那时候是平行志愿，但我依然没有把深圳最好的高中列在我的选择中。尽管那时候成绩也还不错，但我还是没敢把深中填入选项之中。但是老师劝我了，希望我拼一拼，我犹豫了。然后年级组长老师听到了我们的讨论，也强烈希望我一定要填深中。之后中考，结果很欣喜，尽管成绩没出来，但是我已经知道我考得很好，甚至可以说从未有过那么好的发挥。于是我来到了深中。说真的很感谢那时候老师们的支持，不然我肯定不会是现在的我，虽然这并不能得出怎样更好，但是这确实是一次永不后悔的选择。<br>&emsp;&emsp;虽然很早就知道要举办校庆，但是并没有打算去看看。不过既然有人约一起，实力拖后腿的我还是厚颜无耻的去了。毕业时，很多地方还只是规划建造。之后两年回去过两次，看到似乎在建。现在又隔数年，站在校门口，感觉完全不一样了。旧楼拆了，新楼建起。转了一圈，新建的楼倒是还不错，还在的还是原来那样。可惜渡过时间最长的科学馆没有机会再进去看看。不得不说，整个学校崭新了许多。现在最破的楼就是宿舍了，不过看起来过不了几年也是要拆了。<br>&emsp;&emsp;很意外的是，早上去到大概也就10分钟，看见了一个人。虽说是迎面，但也相距不近，依然一眼就认出了。应该是快5年没见了吧。曾经相信不会再有见面的机会，曾经也幻想过在各种情况偶然相遇。但是从未想过会是现在这样。可惜我并没有勇气，连招呼也不敢打，转个身匆忙离开。现在已经没有什么感觉了，也再无联系，即便匆匆一面，又能如何，不如就这样罢了。经此一面，不知又是何年。<br>&emsp;&emsp;转悠一圈也遇见了许多熟悉或陌生的人，有高三的同班的，有已经想不起名字的，也有不知在哪见过却很眼熟的，有曾经的老师，有没想到会来的铮哥，还有那在楼梯上擦肩而过的熟悉又陌生的面容和倩影。现在觉得相遇真是一件美好的事，不论是相识抑或陌生。<br>&emsp;&emsp;许多想说的，又不知从何说起。罢了罢了，只要依然记得留在心里就好。这是开始的地方，是一个教育我们不要只是应试的地方，虽然并没有能成为自己想成为的人，虽然离理想还非常遥远，但是她的思想已经刻印在心里，无论何时想起来，都是激励自己前行的动力。虽然我现在并不能给她带来荣耀，但是会永远为她而骄傲。</p>
 
             
         
@@ -260,16 +240,10 @@
         
     <nav class="article-page">
         
-            <a href="/2017/11/18/happy-birthday-to-szms/" id="art-left" class="art-right">
-                <span class="next-title">
-                    开始的地方<i class="iconfont icon-right"></i> 
-                </span>
-            </a>
         
-        
-            <a href="/2017/09/21/indent-in-markdown/" id="art-right" class="art-left">
+            <a href="/2017/09/30/css-absolute/" id="art-right" class="art-left">
                 <span class="prev-title"> 
-                    <i class="iconfont icon-left"></i>在Markdown中使用缩进
+                    <i class="iconfont icon-left"></i>CSS中absolute的特性和应用
                 </span>
             </a>
         
